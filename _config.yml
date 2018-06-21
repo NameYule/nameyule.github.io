@@ -20,6 +20,8 @@ share:
   linkedin: true
   pinterest: false
   email: true
+  instagram: false
+  github: true
 
 social:
   github: nameyule
