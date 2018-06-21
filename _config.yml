@@ -22,3 +22,5 @@ myblog:
   postbgimg: []
 
 categories: [python, books]
+
+theme: jekyll-theme-cayman
