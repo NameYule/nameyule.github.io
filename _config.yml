@@ -26,15 +26,17 @@ share:
 social:
   github: nameyule
  # stackoverflow: ''
-  linkedin: 'http://www.linkedin.com/in/erichurrah/'
+  linkedin: erichurrah
  # instagram: ''
  # lastfm: ''
  # rss: feed.xml
+  twitter: twyule
+  gplus: yule.hurrah@gmail.com
 
 # Google Analytics key, leave blank to ignore
 google_analytics_key:
 # Yandex metrica (https://metrica.yandex.com/) leave blank to ignore or put true to use
-yandex_metrica: true
+yandex_metrica: 
 
 
 # Set this to your disqus shortname to enable comments. Note that the 'comments'
