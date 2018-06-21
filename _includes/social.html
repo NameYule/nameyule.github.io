@@ -20,6 +20,18 @@
     <li>
         <a title="{{ site.social.lastfm }} on Last.fm" href="https://www.lastfm.com/user/{{ site.social.lastfm }}" target="_blank"><i class="fa fa-lastfm fa-2x"></i></a>
     </li>
+    {% endif %} {% if site.social.twitter %}
+    <li>
+        <a title="{{ site.social.lastfm }} on Last.fm" href="https://twitter.com/{{ site.social.twitter }}" target="_blank">
+            <i class="fa fa-twitter fa-2x"></i>
+        </a>
+    </li>
+    {% endif %} {% if site.social.gplus %}
+    <li>
+        <a title="{{ site.social.lastfm }} on Last.fm" href="https://plus.google.com/{{ site.social.gplus }}" target="_blank">
+            <i class="fa fa-google-plus fa-2x"></i>
+        </a>
+    </li>
     {% endif %} {% if site.social.rss %}
     <li>
         <a title="{{ site.social.rss }} RSS" href="{{ site.social.rss | relative_url }}" target="_blank"><i class="fa fa-rss fa-2x"></i></a>
