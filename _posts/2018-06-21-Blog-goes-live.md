@@ -4,6 +4,7 @@ title: "部落格上线啦！"
 date: 2018-06-21 23:13:00
 description: 部落格上线经过；GitHub Pages使用教程
 share: true
+comments: true
 tags:
  - 学习笔记
 ---
