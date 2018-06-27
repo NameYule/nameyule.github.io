@@ -23,14 +23,15 @@
                                 {{ content }} {% include share.html %}
                             </div>
                             {% if page.comments %}
-                            <!--                   <div id="disqus_thread">
+
+                            <!-- <section id="comments">               <div id="disqus_thread">
                     <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
                     <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-                  </div> -->
+                  </div></section> -->
 
-                            <section id="comments">
-                                <!--高速版，加载速度快，使用前需测试页面的兼容性-->
-                                <div id="SOHUCS" sid="{{ page.title }}"></div>
+
+                            <!--高速版，加载速度快，使用前需测试页面的兼容性-->
+                            <div id="SOHUCS" sid="{{ page.title }}">
                                 <script type="text/javascript">
                                     (function() {
                                         var appid = 'cytG1UkeB';
@@ -69,8 +70,7 @@
                                         }
                                     })();
                                 </script>
-                            </section>
-
+                            </div>
                             {% endif %}
                         </div>
                     </div>
@@ -80,7 +80,6 @@
                 </div>
             </div>
         </div>
-        <!-- {% include disqus-comments.html %} -->
     </div>
     {% include footer.html %}
 </div>
