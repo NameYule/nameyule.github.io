@@ -24,23 +24,24 @@
                             </div>
                             {% if page.comments %}
 
-                            <!-- <section id="comments">               <div id="disqus_thread">
-                    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-                    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-                  </div></section> -->
-
-
-                            <!--高速版，加载速度快，使用前需测试页面的兼容性-->
+                            <!-- 
+                            <section id="comments">
+                                <div id="disqus_thread">
+                                    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                                    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+                                </div>
+                            </section> 
+                            
                             <div id="SOHUCS" sid="{{ page.title }}">
                                 <script type="text/javascript">
-                                    (function() {
+                                    (function () {
                                         var appid = 'cytG1UkeB';
                                         var conf = 'prod_7044a99e45a37dd68c59cda7d49f313c';
                                         var width = window.innerWidth || document.documentElement.clientWidth;
                                         if (width < 960) {
                                             window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>');
                                         } else {
-                                            var loadJs = function(d, a) {
+                                            var loadJs = function (d, a) {
                                                 var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
                                                 var b = document.createElement("script");
                                                 b.setAttribute("type", "text/javascript");
@@ -48,7 +49,7 @@
                                                 b.setAttribute("src", d);
                                                 if (typeof a === "function") {
                                                     if (window.attachEvent) {
-                                                        b.onreadystatechange = function() {
+                                                        b.onreadystatechange = function () {
                                                             var e = b.readyState;
                                                             if (e === "loaded" || e === "complete") {
                                                                 b.onreadystatechange = null;
@@ -61,7 +62,7 @@
                                                 }
                                                 c.appendChild(b)
                                             };
-                                            loadJs("https://changyan.sohu.com/upload/changyan.js", function() {
+                                            loadJs("https://changyan.sohu.com/upload/changyan.js", function () {
                                                 window.changyan.api.config({
                                                     appid: appid,
                                                     conf: conf
@@ -71,6 +72,28 @@
                                     })();
                                 </script>
                             </div>
+                            -->
+
+                            <!-- 来必力City版安装代码 -->
+                            <div id="lv-container" data-id="city" data-uid="MTAyMC8zNzY2Ny8xNDE5OA==">
+                                <script type="text/javascript">
+                                    (function(d, s) {
+                                        var j, e = d.getElementsByTagName(s)[0];
+
+                                        if (typeof LivereTower === 'function') {
+                                            return;
+                                        }
+
+                                        j = d.createElement(s);
+                                        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                                        j.async = true;
+
+                                        e.parentNode.insertBefore(j, e);
+                                    })(document, 'script');
+                                </script>
+                                <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+                            </div>
+                            <!-- City版安装代码已完成 -->
                             {% endif %}
                         </div>
                     </div>
