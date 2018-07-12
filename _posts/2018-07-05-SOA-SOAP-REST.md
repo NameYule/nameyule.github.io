@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "SOA及相关概念"
+title: "SOA、SOAP、REST"
 date: 2018-07-05 13:42:00
 description: SOA, SOAP, REST
 share: true
