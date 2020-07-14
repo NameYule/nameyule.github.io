@@ -4,8 +4,8 @@ name: 老于乐的部落格
 description: 随笔，学习笔记，读书笔记
 
 # Url is currently only used only for the RSS feed in feed.xml
-url: http://nameyule.github.io
-#url: http://localhost:4000
+# url: http://nameyule.github.io
+url: http://172.17.204.222:4000/
 
 # For a project page here should be a project name. Otherwise (for user's/organization's page leave it empty)
 baseurl: 
@@ -16,8 +16,8 @@ copyright: 2018-2020
 share:
   facebook: false
   twitter: true
-  gplus: true
-  linkedin: true
+  gplus: false
+  linkedin: false
   pinterest: false
   email: true
   instagram: false
@@ -30,13 +30,13 @@ social:
  # instagram: ''
  # lastfm: ''
   twitter: twyule
-  gplus: '112904468170306939077'
+ # gplus: '112904468170306939077'
   rss: feed.xml
 
 # Google Analytics key, leave blank to ignore
-google_analytics_key:
+#google_analytics_key:
 # Yandex metrica (https://metrica.yandex.com/) leave blank to ignore or put true to use
-yandex_metrica: 
+# yandex_metrica: 
 
 
 # Set this to your disqus shortname to enable comments. Note that the 'comments'
