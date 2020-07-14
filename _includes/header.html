@@ -7,18 +7,22 @@
     <title>{{ site.name }}{% if page.title %} | {{ page.title }} {% endif %}</title>
     <meta name="theme-color" content="#222222" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="{{ '/assets/js/jquery.min.js' | relative_url }}"></script>
-    <script src="{{ '/assets/js/bootstrap.min.js' | relative_url }}"></script>
+    <!-- <script src="{{ '/assets/js/jquery.min.js' | relative_url }}"></script> -->
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- <script src="{{ '/assets/js/bootstrap.min.js' | relative_url }}"></script> -->
+    <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.0.0-alpha1/js/bootstrap.min.js"></script>
     <script src="{{ '/assets/js/header.js' | relative_url }}"></script>
     <script src="{{ '/assets/js/toc.js' | relative_url }}"></script>
     #region
-    <script src="{{ '/assets/js/webfont.js' | relative_url }}"></script>
+    <!-- <script src="{{ '/assets/js/webfont.js' | relative_url }}"></script> -->
+    <script src="https://cdn.bootcdn.net/ajax/libs/webfont/1.6.28/webfontloader.js"></script>
     <link rel="icon" href="/assets/favicon.png" type="image/x-icon">
     <link rel="shortcut icon" href="/assets/favicon.png" type="image/x-icon">
     <link href="{{ '/assets/css/bootstrap.min.css' | relative_url }}" rel="stylesheet">
     <link href="{{ '/assets/css/theme.css' | relative_url }}" rel="stylesheet">
     <link href="{{ '/assets/css/syntax.css' | relative_url }}" rel="stylesheet">
-    <link href="{{ '/assets/css/font-awesome/css/font-awesome.min.css' | relative_url }}" rel="stylesheet">
+    <!-- <link href="{{ '/assets/css/font-awesome/css/font-awesome.min.css' | relative_url }}" rel="stylesheet"> -->
+    <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.13.1/css/fontawesome.min.css" rel="stylesheet">
 </head>
 
 <body>
@@ -33,9 +37,9 @@
         };
         (function () {
             var wf = document.createElement('script');
-            // wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
-            //     '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
-            wf.src = "{{ '/assets/js/webfont.js' | relative_url }}"
+            wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+                '://cdn.bootcdn.net/ajax/libs/webfont/1.6.28/webfontloader.js';
+            // wf.src = "{{ '/assets/js/webfont.js' | relative_url }}"
             wf.type = 'text/javascript';
             wf.async = 'true';
             var s = document.getElementsByTagName('script')[0];
