@@ -1,0 +1,20 @@
+en:
+  name: English
+  subtitle: Theme for Hexo
+  author: Theme NexT
+  description: Stay Simple. Stay NexT.
+zh-TW:
+  name: Chinese
+zh-CN:
+  name: 简体中文
+  menu:
+    Life: 生活
+    20 years: 我这20年
+    Tech: 技术
+    Career: 职场
+    Products: 产品
+    Manage: 管理
+    FMCG: 快消品
+    Read: 读书
+    Manufacturing: 智能制造
+    OS: OS & VM
