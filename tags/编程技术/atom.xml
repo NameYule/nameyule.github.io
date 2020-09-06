@@ -1,0 +1,204 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://0.0.0.0:4000</id>
+    <title>老于乐 • Posts by &#34;编程技术&#34; tag</title>
+    <link href="https://0.0.0.0:4000" />
+    <updated>2020-07-13T19:14:00.000Z</updated>
+    <category term="项目管理" />
+    <category term="敏捷" />
+    <category term="学习笔记" />
+    <category term="编程技术" />
+    <category term="虚拟机" />
+    <category term="linux" />
+    <category term="conda" />
+    <entry>
+        <id>https://0.0.0.0:4000/2020/07/13/tech-coding-2020-07-14-Develop-with-Linux/</id>
+        <title>Linux配置conda、Python、Mysql、Nodejs等开发环境</title>
+        <link rel="alternate" href="https://0.0.0.0:4000/2020/07/13/tech-coding-2020-07-14-Develop-with-Linux/"/>
+        <content type="html">&lt;h3 id=&#34;安装Linux&#34;&gt;&lt;a href=&#34;#安装Linux&#34; class=&#34;headerlink&#34; title=&#34;安装Linux&#34;&gt;&lt;/a&gt;安装Linux&lt;/h3&gt;&lt;h3 id=&#34;安装conda&#34;&gt;&lt;a href=&#34;#安装conda&#34; class=&#34;headerlink&#34; title=&#34;安装conda&#34;&gt;&lt;/a&gt;安装conda&lt;/h3&gt;&lt;h3 id=&#34;配置虚拟环境&#34;&gt;&lt;a href=&#34;#配置虚拟环境&#34; class=&#34;headerlink&#34; title=&#34;配置虚拟环境&#34;&gt;&lt;/a&gt;配置虚拟环境&lt;/h3&gt;&lt;h3 id=&#34;安装mysql&#34;&gt;&lt;a href=&#34;#安装mysql&#34; class=&#34;headerlink&#34; title=&#34;安装mysql&#34;&gt;&lt;/a&gt;安装mysql&lt;/h3&gt;</content>
+        <category term="学习笔记" />
+        <category term="编程技术" />
+        <category term="虚拟机" />
+        <category term="linux" />
+        <category term="conda" />
+        <updated>2020-07-13T19:14:00.000Z</updated>
+    </entry>
+    <entry>
+        <id>https://0.0.0.0:4000/2018/07/04/tech-coding-2018-07-05-SOA-SOAP-REST/</id>
+        <title>SOA、SOAP、REST</title>
+        <link rel="alternate" href="https://0.0.0.0:4000/2018/07/04/tech-coding-2018-07-05-SOA-SOAP-REST/"/>
+        <content type="html">&lt;h3&gt;SOA: Service-oriented Architecture&lt;/h3&gt; 
+
+&lt;p&gt;基本定义：&lt;br&gt;面向服务的架构（SOA）是一个组件模型，它将应用程序的不同功能单元（称为服务）通过这些服务之间定义良好的接口和契约联系起来。接口是采用中立的方式进行定义的，它应该独立于实现服务的硬件平台、操作系统和编程语言。这使得构建在各种各样的系统中的服务可以以一种统一和通用的方式进行交互。&lt;br&gt;在一个企业内部，SOA服务通过一个扮演&lt;code&gt;目录列表&lt;/code&gt;（&lt;code&gt;directory listing&lt;/code&gt;）角色的&lt;code&gt;登记处&lt;/code&gt;（&lt;code&gt;Registry&lt;/code&gt;）来进行维护。应用程序在登记处（Registry）寻找并调用某项服务。&lt;code&gt;统一描述&lt;/code&gt;，定义和集成（&lt;code&gt;UDDI&lt;/code&gt;， Universal Description， Definition， and Integration）是服务登记的标准。&lt;br&gt;每项SOA服务都有一个与之相关的服务品质（&lt;code&gt;QoS&lt;/code&gt;， quality of service）。QoS的一些关键元素有安全需求（例如认证和授权），可靠通信（译注：可靠消息是指，确保消息“仅且仅仅”发送一次，从而过滤重复信息。），以及谁能调用服务的策略。&lt;/p&gt;
+&lt;p&gt;要点：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;是一种软件系统架构的思想&lt;/li&gt;
+&lt;li&gt;将面向对象的概念进一步抽象，提升为面向服务&lt;/li&gt;
+&lt;li&gt;是一种粗粒度、松耦合服务架构，服务之间通过简单、精确定义接口进行通讯，不涉及底层编程接口和通讯模型。&lt;/li&gt;
+&lt;li&gt;可以看作是B/S模型、XML（标准通用标记语言的子集）/Web Service技术之后的自然延伸。&lt;/li&gt;
+&lt;li&gt;SOA 系统原型的一个典型例子是通用对象请求代理体系结构（Common Object Request Broker Architecture，&lt;code&gt;CORBA&lt;/code&gt;）&lt;/li&gt;
+&lt;li&gt;通过使用基于XML（标准通用标记语言的子集） 的语言（称为 Web 服务描述语言（Web Services Definition Language，&lt;code&gt;WSDL&lt;/code&gt;））来描述接口&lt;/li&gt;
+&lt;li&gt;一个应用程序的业务逻辑（business logic）或某些单独的功能被模块化并作为服务呈现给消费者或客户端。这些服务的关键是他们的松耦合特性。 &lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;特性： &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;可从企业外部访问&lt;/li&gt;
+&lt;li&gt;平台无关&lt;/li&gt;
+&lt;li&gt;随时可用&lt;/li&gt;
+&lt;li&gt;粗粒度的服务接口分级&lt;/li&gt;
+&lt;li&gt;松散耦合：&lt;/li&gt;
+&lt;li&gt;可重用的服务&lt;/li&gt;
+&lt;li&gt;服务接口设计管理&lt;/li&gt;
+&lt;li&gt;标准化的服务接口&lt;/li&gt;
+&lt;li&gt;支持各种消息模式&lt;/li&gt;
+&lt;li&gt;精确定义的服务契约 &lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;应用价值：  &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;SOA可通过互联网服务器发布，从而突破企业内网的限制，实现与供应链上下游伙伴业务的紧密结合。通过SOA架构，企业可以与其业务伙伴直接建立新渠道，建立新伙伴的成本得以降低。&lt;/li&gt;
+&lt;li&gt;业务伙伴对整个业务系统的影响较低。在企业与各业务伙伴关系不断发生变化的情况下，节省的费用会越来越多。&lt;/li&gt;
+&lt;li&gt;SOA与平台无关，减少了业务应用实现的限制。要将企业的业务伙伴整合到企业的“大”业务系统中，对其业务伙伴具体采用什么技术没有限制。&lt;/li&gt;
+&lt;li&gt;SOA具有可按模块分阶段进行实施的优势。可以成功一步再做下一步，将实施对企业的冲击减少到最小。&lt;/li&gt;
+&lt;li&gt;SOA的实施可能并不具有成本显著性。这要分三种情况加以讨论：&lt;ul&gt;
+&lt;li&gt;当企业从零开始构建业务系统时，采用SOA架构与不采用SOA架构成本可看做是相同的。&lt;/li&gt;
+&lt;li&gt;当企业业务发展或发生企业重组等变化而原有系统不能满足需要，而需要重构业务系统时，采用SOA架构与不采用SOA架构成本可看做是相同的。&lt;/li&gt;
+&lt;li&gt;当企业业务发生缓慢变化并可预见到将来需要重构业务系统时，由于可以按模块分阶段逐步实施SOA以适应变化的需要，这样企业不需一下投入一大笔经费进行系统改造，而是根据企业业务发展情况和资金情况逐步投入，缓解了信息投入的压力。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;发展效益  &lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;平衡最初的旧系统投资(Leverage initial investment)：组织过去所投资的系统、软硬体，如果能再利用等于赋予其新的价值，这也替组织降低成本并增加竞争力。&lt;/li&gt;
+&lt;li&gt;基础建设的便利性(Infrastructure Commoditization)：让所有的应用程式能相互沟通(互通性)。&lt;/li&gt;
+&lt;li&gt;快速的接近市场(Faster time-to-market)：服务的重复使用(再利用)，来缩短过去的组织流程，更快速的提供服务来接近市场。&lt;/li&gt;
+&lt;li&gt;减少支出(Reduce Cost)：服务的重复使用，可降低开发成本。因为开发新系统的成本，大部份比更新旧有系统来的花费大。&lt;/li&gt;
+&lt;li&gt;减低风险(Risk mitigation)：开发新系统的风险远大于更新旧系统。&lt;/li&gt;
+&lt;li&gt;持续改善商业流程的循环(Continuous improvement cycle for business process)&lt;/li&gt;
+&lt;li&gt;中心流程处理(Process-centric processing)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;内容摘抄自：百度百科词条&lt;a href=&#34;https://baike.baidu.com/item/SOA/2140650&#34;&gt;SOA&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h3&gt;SOAP：Simple Object Access Protocol&lt;/h3&gt;
+
+&lt;p&gt;基本定义：&lt;br&gt;简单对象访问协议(SOAP)是交换数据的一种协议规范，是一种轻量的、简单的、基于XML（标准通用标记语言下的一个子集）的协议，它被设计成在WEB上交换结构化的和固化的信息。&lt;/p&gt;
+&lt;p&gt;要点：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;是Web Service三要素之一。（Web Service三要素：SOAP、WSDL(Web Services Description Language)、UDDI(Universal Description Discovery and Integration)之一， SOAP用来描述传递信息的格式， WSDL 用来描述如何访问具体的接口， UDDI用来管理，分发，查询Web Service 。）&lt;/li&gt;
+&lt;li&gt;SOAP使用基于XML的数据结构和超文本传输协议(HTTP)的组合定义了一个标准的方法来使用Internet上各种不同操作环境中的分布式对象。&lt;/li&gt;
+&lt;li&gt;基于类对象的传输协议。&lt;/li&gt;
+&lt;li&gt;SOAP封装（envelop），它定义了一个框架，描述消息中的内容是什么，是谁发送的，谁应当接受并处理它以及如何处理它们；&lt;/li&gt;
+&lt;li&gt;SOAP编码规则（encoding rules），它定义了一种序列化机制，用于表示应用程序需要使用的数据类型的实例；&lt;/li&gt;
+&lt;li&gt;SOAP RPC表示（RPC representation），它定了一个协定，用于表示远程过程调用和应答；&lt;/li&gt;
+&lt;li&gt;SOAP绑定（binding），它定义了SOAP使用哪种协议交换信息。使用HTTP/TCP/UDP协议都可以。&lt;/li&gt;
+&lt;li&gt;SOAP消息基本上是从发送端到接收端的单向传输，但它们常常结合起来执行类似于请求 / 应答的模式。所有的 SOAP消息都使用 XML 编码。&lt;/li&gt;
+&lt;li&gt;一条 SOAP消息就是一个包含有一个必需的 SOAP 的封装包，一个可选的 SOAP 标头和一个必需的 SOAP 体块的 XML 文档。&lt;/li&gt;
+&lt;li&gt;把 SOAP 绑定到 HTTP 提供了同时利用 SOAP 的样式和分散的灵活性的特点以及 HTTP 的丰富的特征库的优点。&lt;/li&gt;
+&lt;li&gt;在 RPC 上使用 SOAP 并不仅限于 HTTP 协议绑定。SOAP也可以绑定到TCP和UDP协议上。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;语法规则:  &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;构建模块: 一条 SOAP 消息就是一个普通的 XML 文档，包含下列元素：&lt;ul&gt;
+&lt;li&gt;必需的 Envelope 元素，可把此 XML 文档标识为一条 SOAP 消息&lt;/li&gt;
+&lt;li&gt;可选的 Header 元素，包含头部信息&lt;/li&gt;
+&lt;li&gt;必需的 Body 元素，包含所有的调用和响应信息&lt;/li&gt;
+&lt;li&gt;可选的 Fault 元素，提供有关在处理此消息所发生错误的信息&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;语法规则&lt;ul&gt;
+&lt;li&gt;SOAP 消息必须用 XML 来编码&lt;/li&gt;
+&lt;li&gt;SOAP 消息必须使用 SOAP Envelope 命名空间&lt;/li&gt;
+&lt;li&gt;SOAP 消息必须使用 SOAP Encoding 命名空间&lt;/li&gt;
+&lt;li&gt;SOAP 消息不能包含 DTD 引用&lt;/li&gt;
+&lt;li&gt;SOAP 消息不能包含 XML 处理指令&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;消息基本结构  &lt;figure class=&#34;highlight xml&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;meta&#34;&gt;&amp;lt;?xml&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;meta&#34;&gt;　version=&amp;quot;1.0&amp;quot;?&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;tag&#34;&gt;&amp;lt;&lt;span class=&#34;name&#34;&gt;soap:Envelope&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;tag&#34;&gt;　&lt;span class=&#34;attr&#34;&gt;xmlns:soap&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&amp;quot;http://www.w3.org/2001/12/soap-envelope&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;tag&#34;&gt;　&lt;span class=&#34;attr&#34;&gt;soap:encodingStyle&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&amp;quot;http://www.w3.org/2001/12/soap-encoding&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;tag&#34;&gt;&amp;lt;&lt;span class=&#34;name&#34;&gt;soap:Header&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;&amp;lt;!--百度百科示例--&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;tag&#34;&gt;&amp;lt;/&lt;span class=&#34;name&#34;&gt;soap:Header&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;tag&#34;&gt;&amp;lt;&lt;span class=&#34;name&#34;&gt;soap:Body&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;&amp;lt;!--百度百科示例--&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;tag&#34;&gt;&amp;lt;&lt;span class=&#34;name&#34;&gt;soap:Fault&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;&amp;lt;!--百度百科示例--&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;tag&#34;&gt;&amp;lt;/&lt;span class=&#34;name&#34;&gt;soap:Fault&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;tag&#34;&gt;&amp;lt;/&lt;span class=&#34;name&#34;&gt;soap:Body&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;tag&#34;&gt;&amp;lt;/&lt;span class=&#34;name&#34;&gt;soap:Envelope&lt;/span&gt;&amp;gt;&lt;/span&gt;  &lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;优点：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;可扩展的。SOAP 无需中断已有的应用程序, SOAP 客户端、 服务器和协议自身都能发展。而且SOAP 能极好地支持中间介质和层次化的体系结构。&lt;/li&gt;
+&lt;li&gt;简单的。客户端发送一个请求,调用相应的对象, 然后服务器返回结果。这些消息是XML 格式的,并且封装成符合HTTP 协议的消息。因此,它符合任何路由器、 防火墙或代理服务器的要求。&lt;/li&gt;
+&lt;li&gt;完全和厂商无关。SOAP可以相对于平台、 操作系统、 目标模型和编程语言独立实现。另外,传输和语言绑定以及数据编码的参数选择都是由具体的实现决定的。&lt;/li&gt;
+&lt;li&gt;与编程语言无关。SOAP 可以使用任何语言来完成，只要客户端发送正确SOAP 请求( 也就是说, 传递一个合适的参数给一个实际的远端服务器)。SOAP 没有对象模型,应用程序可以捆绑在任何对象模型中。&lt;/li&gt;
+&lt;li&gt;与平台无关。SOAP 可以在任何操作系统中无需改动正常运行。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;内容摘抄自：百度百科词条&lt;a href=&#34;(https://baike.baidu.com/item/%E7%AE%80%E5%8D%95%E5%AF%B9%E8%B1%A1%E8%AE%BF%E9%97%AE%E5%8D%8F%E8%AE%AE)&#34;&gt;简单对象访问协议&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h3&gt;REST：Representational State Transfer&lt;/h3&gt;
+
+&lt;p&gt;基本定义：&lt;br&gt;表述性状态传递（英文：Representational State Transfer，简称REST）是Roy Fielding博士在2000年他的博士论文中提出来的一种软件架构风格。它是一种针对网络应用的设计和开发方式，可以降低开发的复杂性，提高系统的可伸缩性。REST是一组架构约束条件和原则。满足这些约束条件和原则的应用程序或设计就是RESTful。&lt;br&gt;目前在三种主流的Web服务实现方案中，因为REST模式的Web服务与复杂的SOAP和XML-RPC对比来讲明显的更加简洁，越来越多的web服务开始采用REST风格设计和实现。  &lt;/p&gt;
+&lt;p&gt;基本设计原则：  &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;显式地使用 HTTP 方法。见&lt;a href=&#34;#http_method&#34;&gt;http方法&lt;/a&gt;。&lt;ul&gt;
+&lt;li&gt;若要在服务器上创建资源，应该使用 POST 方法。&lt;/li&gt;
+&lt;li&gt;若要检索某个资源，应该使用 GET 方法。&lt;/li&gt;
+&lt;li&gt;若要更改资源状态或对其进行更新，应该使用 PUT 方法。&lt;/li&gt;
+&lt;li&gt;若要删除某个资源，应该使用 DELETE 方法。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;无状态。&lt;br&gt;  完整、独立的请求不要求服务器在处理请求时检索任何类型的应用程序上下文或状态。&lt;br&gt;  REST Web 服务应用程序（或客户端）在 HTTP Header 和请求正文中包括服务器端组件生成响应所需要的所有参数、上下文和数据。&lt;br&gt;  这种意义上的无状态可以改进 Web 服务性能，并简化服务器端组件的设计和实现，因为服务器上没有状态，从而消除了与外部应用程序同步会话数据的需要。&lt;/li&gt;
+&lt;li&gt;公开目录结构式的 URI。&lt;br&gt;在考虑基于 REST 的 Web 服务的 URI 结构时，需要指出的一些附加指导原则包括：&lt;ul&gt;
+&lt;li&gt;隐藏服务器端脚本技术文件扩展名（.jsp、.php、.asp）——如果有的话，以便您能够移植到其他脚本技术而不用更改 URI。&lt;/li&gt;
+&lt;li&gt;将所有内容保持小写。&lt;/li&gt;
+&lt;li&gt;将空格替换为连字符或下划线（其中一种或另一种）。&lt;/li&gt;
+&lt;li&gt;尽可能多地避免查询字符串。&lt;/li&gt;
+&lt;li&gt;如果请求 URI 用于部分路径，与使用 404 Not Found 代码不同，应该始终提供缺省页面或资源作为响应。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;传输 XML、JavaScript Object Notation (JSON)，或同时传输这两者。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;要点：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;REST是设计风格而不是标准。&lt;/li&gt;
+&lt;li&gt;REST通常基于使用HTTP，URI，和XML（标准通用标记语言下的一个子集）以及HTML（标准通用标记语言下的一个应用）这些现有的广泛流行的协议和标准。&lt;/li&gt;
+&lt;li&gt;REST 定义了一组体系架构原则，您可以根据这些原则设计以系统资源为中心的 Web 服务，包括使用不同语言编写的客户端如何通过 HTTP 处理和传输资源状态。&lt;/li&gt;
+&lt;li&gt;事实上，REST 对 Web 的影响非常大，由于其使用相当方便，已经普遍地取代了基于 SOAP 和 WSDL 的接口设计。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;span id=&#34;http_method&#34;&gt;HTTP方法：&lt;/span&gt;&lt;br&gt;由于所有资源使用了同样的接口，你可以依此使用GET方法检索一个表述（representation）——也就是对资源的描述。因为规范中定义了GET的语义，所以可以肯定当你调用它的时候不需要对后果负责——这就是为什么可以“安全”地调用此方法。&lt;br&gt;GET方法支持非常高效、成熟的缓存，所以在很多情况下，你甚至不需要向服务器发送请求。还可以肯定的是，GET方法具有幂等性[译注：指多个相同请求返回相同的结果]——如果你发送了一个GET请求没有得到结果，你可能不知道原因是请求未能到达目的地，还是响应在反馈的途中丢失了。幂等性保证了你可以简单地再发送一次请求解决问题。&lt;br&gt;幂等性同样适用于PUT（基本的含义是“更新资源数据，如果资源不存在的话，则根据此URI创建一个新的资源”）和DELETE（你完全可以一遍又一遍地操作它，直到得出结论——删除不存在的东西没有任何问题）方法。&lt;br&gt;POST方法，通常表示“创建一个新资源”，也能被用于调用任意过程，因而它既不安全也不具有幂等性。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;内容摘抄自百度百科&lt;a href=&#34;https://baike.baidu.com/item/rest/6330506&#34;&gt;rest&lt;/a&gt;词条及IBM开发者网站文章&lt;a href=&#34;https://www.ibm.com/developerworks/cn/webservices/ws-restful/&#34;&gt;《基于 REST 的 Web 服务：基础》&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+</content>
+        <category term="学习笔记" />
+        <category term="编程技术" />
+        <updated>2018-07-04T21:42:00.000Z</updated>
+    </entry>
+    <entry>
+        <id>https://0.0.0.0:4000/2018/07/04/tech-coding-2018-07-07-Web-APIs/</id>
+        <title>WebAPI、Web Service、REST及其他相关概念</title>
+        <link rel="alternate" href="https://0.0.0.0:4000/2018/07/04/tech-coding-2018-07-07-Web-APIs/"/>
+        <content type="html">&lt;p&gt;&lt;strong&gt;SOA&lt;/strong&gt;：面向服务的架构。一种架构思想，核心是低耦合、标准服务接口、屏蔽底层接口、通讯的实现等。  &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;SOAP&lt;/strong&gt;：简单对象访问协议。一种接口设计的标准。具体约定了应用实现过程中对外提供服务（数据）的实现标准，有明确的语法规则。是Web Service三要素之一。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;REST&lt;/strong&gt;：表述性状态转移。是一种架构思想。核心是显示的使用HTTP方法、无状态、公开目录式的URI、基于XML或Json的数据传输格式。&lt;br&gt;由于其简洁性，REST在一定程度上有取代SOAP实现的趋势。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Web Service&lt;/strong&gt;：一种软件开发框架。是一个&lt;em&gt;平台独立的，低耦合的，自包含的、基于可编程&lt;/em&gt;的web的应用程序，可使用开放的XML（标准通用标记语言下的一个子集）标准来描述、发布、发现、协调和配置这些应用程序，用于开发分布式的互操作的应用程序。适用该框架的情况：跨越防火墙；应用程序集成；B2B集成；软件重用。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Web API&lt;/strong&gt;：单纯的一个接口设计规范，可以认为是SOAP的替代，是REST思想的具体实现之一。最典型的是.Net框架下的 ASP.Net Web API。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;MVC&lt;/strong&gt;：模型-视图-控制器。一种软件（程序代码组织）架构。将应用的（包括桌面应用和Web应用）设计分层，降低开发过程的耦合性、提高代码重用性，并简化软件开发管理过程。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;WCF&lt;/strong&gt;：Windows通讯开发平台。由微软开发的一系列支持数据通信的应用程序框架。它包含了：网络服务的协议、业务服务的协议、数据类型的声明、传输安全性的定义。&lt;/p&gt;
+&lt;h2 id=&#34;【个人总结】&#34;&gt;&lt;a href=&#34;#【个人总结】&#34; class=&#34;headerlink&#34; title=&#34;【个人总结】&#34;&gt;&lt;/a&gt;【个人总结】&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;SOA和REST都是软件架构设计的思想（注意，是“思想”，抽象的概念，而不是“思路”，），主要目的是解决应用程序之间及应用程序内部的耦合度、可重用性等问题。&lt;/li&gt;
+&lt;li&gt;SOAP和WebAPI都是对上述两种架构思想的具体实现。&lt;/li&gt;
+&lt;li&gt;SOA、Web API及微服务的区别。微服务是对SOA更进一步的抽象，微服务面向具体的业务场景，每一个服务是可以单独运行的应用，而SOA更偏向于应用内部的服务封装。&lt;/li&gt;
+&lt;li&gt;Web Service是系统对外提供接口的一种形式，它借助SOAP、WSDL、UDDI、RPC或消息队列等技术实现对外提供服务。&lt;/li&gt;
+&lt;li&gt;不论哪种技术，都是随着软件工程、企业应用的发展及服务器、终端设备的不断升级带来的改变，目标都是基于成本节约、适应（快速）变化的面向未来思想、框架、模式。具体如何使用，还要看需求本身、应用场景及企业（用户）现状。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;参考资料：&lt;/em&gt;  &lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;em&gt;&lt;a href=&#34;http://www.cnblogs.com/markli/p/4460564.html&#34;&gt;WCF、WebAPI、WCFREST、WebService之间的区别&lt;/a&gt;&lt;/em&gt;  (英文原文&lt;a href=&#34;https://www.dotnettricks.com/learn/webapi/difference-between-wcf-and-web-api-and-wcf-rest-and-web-service&#34;&gt;在这里&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;&lt;a href=&#34;https://www.zhihu.com/question/37808426&#34;&gt;SOA和微服务架构的区别？&lt;/a&gt;&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;&lt;a href=&#34;https://www.ibm.com/developerworks/cn/websphere/library/techarticles/1601_clark-trs/1601_clark.html&#34;&gt;微服务、SOA 和 API：是敌是友？&lt;/a&gt;&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;&lt;a href=&#34;http://www.cnblogs.com/guyun/p/4589115.html&#34;&gt;Web API 强势入门指南&lt;/a&gt;&lt;/em&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+</content>
+        <category term="学习笔记" />
+        <category term="编程技术" />
+        <updated>2018-07-04T21:42:00.000Z</updated>
+    </entry>
+</feed>

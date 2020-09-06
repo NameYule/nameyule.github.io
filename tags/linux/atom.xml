@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://0.0.0.0:4000</id>
+    <title>老于乐 • Posts by &#34;linux&#34; tag</title>
+    <link href="https://0.0.0.0:4000" />
+    <updated>2020-07-13T19:14:00.000Z</updated>
+    <category term="项目管理" />
+    <category term="敏捷" />
+    <category term="学习笔记" />
+    <category term="编程技术" />
+    <category term="虚拟机" />
+    <category term="linux" />
+    <category term="conda" />
+    <entry>
+        <id>https://0.0.0.0:4000/2020/07/13/tech-coding-2020-07-14-Develop-with-Linux/</id>
+        <title>Linux配置conda、Python、Mysql、Nodejs等开发环境</title>
+        <link rel="alternate" href="https://0.0.0.0:4000/2020/07/13/tech-coding-2020-07-14-Develop-with-Linux/"/>
+        <content type="html">&lt;h3 id=&#34;安装Linux&#34;&gt;&lt;a href=&#34;#安装Linux&#34; class=&#34;headerlink&#34; title=&#34;安装Linux&#34;&gt;&lt;/a&gt;安装Linux&lt;/h3&gt;&lt;h3 id=&#34;安装conda&#34;&gt;&lt;a href=&#34;#安装conda&#34; class=&#34;headerlink&#34; title=&#34;安装conda&#34;&gt;&lt;/a&gt;安装conda&lt;/h3&gt;&lt;h3 id=&#34;配置虚拟环境&#34;&gt;&lt;a href=&#34;#配置虚拟环境&#34; class=&#34;headerlink&#34; title=&#34;配置虚拟环境&#34;&gt;&lt;/a&gt;配置虚拟环境&lt;/h3&gt;&lt;h3 id=&#34;安装mysql&#34;&gt;&lt;a href=&#34;#安装mysql&#34; class=&#34;headerlink&#34; title=&#34;安装mysql&#34;&gt;&lt;/a&gt;安装mysql&lt;/h3&gt;</content>
+        <category term="学习笔记" />
+        <category term="编程技术" />
+        <category term="虚拟机" />
+        <category term="linux" />
+        <category term="conda" />
+        <updated>2020-07-13T19:14:00.000Z</updated>
+    </entry>
+    <entry>
+        <id>https://0.0.0.0:4000/2020/07/13/tech-os-2020-07-14-Vscode-ssh-linux/</id>
+        <title>使用Vscode Remote SSH连接Linux开发环境</title>
+        <link rel="alternate" href="https://0.0.0.0:4000/2020/07/13/tech-os-2020-07-14-Vscode-ssh-linux/"/>
+        <content type="html">&lt;h3 id=&#34;安装Vscode&#34;&gt;&lt;a href=&#34;#安装Vscode&#34; class=&#34;headerlink&#34; title=&#34;安装Vscode&#34;&gt;&lt;/a&gt;安装Vscode&lt;/h3&gt;&lt;h3 id=&#34;安装及配置Remote-SSH插件&#34;&gt;&lt;a href=&#34;#安装及配置Remote-SSH插件&#34; class=&#34;headerlink&#34; title=&#34;安装及配置Remote SSH插件&#34;&gt;&lt;/a&gt;安装及配置Remote SSH插件&lt;/h3&gt;&lt;h3 id=&#34;使用Vscode开发&#34;&gt;&lt;a href=&#34;#使用Vscode开发&#34; class=&#34;headerlink&#34; title=&#34;使用Vscode开发&#34;&gt;&lt;/a&gt;使用Vscode开发&lt;/h3&gt;</content>
+        <category term="学习笔记" />
+        <category term="linux" />
+        <updated>2020-07-13T19:14:00.000Z</updated>
+    </entry>
+</feed>

@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://0.0.0.0:4000</id>
+    <title>老于乐 • Posts by &#34;career&#34; category</title>
+    <link href="https://0.0.0.0:4000" />
+    <updated>2020-09-06T12:21:39.464Z</updated>
+    <category term="项目管理" />
+    <category term="敏捷" />
+    <category term="学习笔记" />
+    <category term="编程技术" />
+    <category term="虚拟机" />
+    <category term="linux" />
+    <category term="conda" />
+    <entry>
+        <id>https://0.0.0.0:4000/2020/09/06/career-new/</id>
+        <title></title>
+        <link rel="alternate" href="https://0.0.0.0:4000/2020/09/06/career-new/"/>
+        <content type="html"></content>
+        <updated>2020-09-06T12:21:39.464Z</updated>
+    </entry>
+    <entry>
+        <id>https://0.0.0.0:4000/2020/09/06/career-when-you-should-change-your-job/</id>
+        <title>换工作的理由</title>
+        <link rel="alternate" href="https://0.0.0.0:4000/2020/09/06/career-when-you-should-change-your-job/"/>
+        <content type="html">&lt;p&gt;年轻人总是容易冲动。&lt;/p&gt;
+&lt;p&gt;所以我一直跟你说，去哪个公司都有各种各样奇葩的事情等着你。&lt;br&gt;每个公司都有需要忍受的事情&lt;/p&gt;
+</content>
+        <updated>2020-09-06T12:21:39.464Z</updated>
+    </entry>
+    <entry>
+        <id>https://0.0.0.0:4000/2020/07/13/career-manage-2020-08-28-Docs-in-Projects/</id>
+        <title>敏捷就不需要文档？</title>
+        <link rel="alternate" href="https://0.0.0.0:4000/2020/07/13/career-manage-2020-08-28-Docs-in-Projects/"/>
+        <content type="html">&lt;p&gt;敏捷不需要文档？&lt;/p&gt;
+&lt;p&gt;文档的作用？&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;清晰的表达；&lt;/li&gt;
+&lt;li&gt;澄清问题&lt;/li&gt;
+&lt;li&gt;团队协同&lt;/li&gt;
+&lt;li&gt;历史查询、人员交接&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;企业项目开发不是个人创作，文档作为重要的信息传输工具，必须存在。&lt;/p&gt;
+</content>
+        <category term="项目管理" />
+        <category term="敏捷" />
+        <updated>2020-07-13T19:14:00.000Z</updated>
+    </entry>
+</feed>

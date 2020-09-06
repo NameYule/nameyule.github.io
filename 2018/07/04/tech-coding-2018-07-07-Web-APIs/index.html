@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.1.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/logosmall.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/logosmall.png">
+  <link rel="mask-icon" href="/images/logosmall.png" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14.0/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/pace-js@1.0.2/themes/blue/pace-theme-minimal.css">
+  <script src="//cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"0.0.0.0","root":"/","scheme":"Mist","version":"8.0.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":false,"sidebar":null}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"search.json","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
+  </script>
+
+  <meta name="description" content="WebAPI, WebService, WCF REST">
+<meta property="og:type" content="article">
+<meta property="og:title" content="WebAPI、Web Service、REST及其他相关概念">
+<meta property="og:url" content="https://0.0.0.0:4000/2018/07/04/tech-coding-2018-07-07-Web-APIs/index.html">
+<meta property="og:site_name" content="老于乐">
+<meta property="og:description" content="WebAPI, WebService, WCF REST">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2018-07-04T21:42:00.000Z">
+<meta property="article:modified_time" content="2020-09-06T12:21:39.464Z">
+<meta property="article:author" content="Eric Hu">
+<meta property="article:tag" content="学习笔记">
+<meta property="article:tag" content="编程技术">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://0.0.0.0:4000/2018/07/04/tech-coding-2018-07-07-Web-APIs/">
+
+
+<script data-pjax class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>WebAPI、Web Service、REST及其他相关概念 | 老于乐</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">老于乐</h1>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-life">
+
+    <a href="/categories/life" rel="section"><i class="fa fa-house-user fa-fw"></i>生活</a>
+
+  </li>
+        <li class="menu-item menu-item-tech">
+
+    <a href="/categories/tech" rel="section"><i class="fa fa-code fa-fw"></i>技术</a>
+
+  </li>
+        <li class="menu-item menu-item-career">
+
+    <a href="/categories/career" rel="section"><i class="fa fa-briefcase fa-fw"></i>职场</a>
+
+  </li>
+        <li class="menu-item menu-item-read">
+
+    <a href="/categories/read" rel="section"><i class="fa fa-book-reader fa-fw"></i>读书</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <section class="post-toc-wrap sidebar-panel">
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E3%80%90%E4%B8%AA%E4%BA%BA%E6%80%BB%E7%BB%93%E3%80%91"><span class="nav-number">1.</span> <span class="nav-text">【个人总结】</span></a></li></ol></div>
+      </section>
+      <!--/noindex-->
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Eric Hu"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">Eric Hu</p>
+  <div class="site-description" itemprop="description">一切过往, 皆为序章</div>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/nameyule" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;nameyule" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/339763999" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;339763999" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/twyule" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;twyule" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/images/wechat.jpg" title="Wechat → &#x2F;images&#x2F;wechat.jpg"><i class="fab fa-weixin fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="rss → &#x2F;atom.xml"><i class="fas fa-rss fa-fw"></i></a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll animated">
+    <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+      LINKS
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://hyh.im/" title="https:&#x2F;&#x2F;hyh.im" rel="noopener" target="_blank">YULE</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://erl.im/" title="https:&#x2F;&#x2F;erl.im&#x2F;" rel="noopener" target="_blank">宝藏程序媛</a>
+        </li>
+    </ul>
+  </div>
+
+      </section>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+      
+
+      
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://0.0.0.0:4000/2018/07/04/tech-coding-2018-07-07-Web-APIs/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Eric Hu">
+      <meta itemprop="description" content="一切过往, 皆为序章">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="老于乐">
+    </span>
+
+    
+    
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          WebAPI、Web Service、REST及其他相关概念
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2020-09-06 20:21:39" itemprop="dateModified" datetime="2020-09-06T20:21:39+08:00">2020-09-06</time>
+      </span>
+
+  
+</div>
+
+            <div class="post-description">WebAPI, WebService, WCF REST</div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p><strong>SOA</strong>：面向服务的架构。一种架构思想，核心是低耦合、标准服务接口、屏蔽底层接口、通讯的实现等。  </p>
+<p><strong>SOAP</strong>：简单对象访问协议。一种接口设计的标准。具体约定了应用实现过程中对外提供服务（数据）的实现标准，有明确的语法规则。是Web Service三要素之一。</p>
+<p><strong>REST</strong>：表述性状态转移。是一种架构思想。核心是显示的使用HTTP方法、无状态、公开目录式的URI、基于XML或Json的数据传输格式。<br>由于其简洁性，REST在一定程度上有取代SOAP实现的趋势。</p>
+<p><strong>Web Service</strong>：一种软件开发框架。是一个<em>平台独立的，低耦合的，自包含的、基于可编程</em>的web的应用程序，可使用开放的XML（标准通用标记语言下的一个子集）标准来描述、发布、发现、协调和配置这些应用程序，用于开发分布式的互操作的应用程序。适用该框架的情况：跨越防火墙；应用程序集成；B2B集成；软件重用。</p>
+<p><strong>Web API</strong>：单纯的一个接口设计规范，可以认为是SOAP的替代，是REST思想的具体实现之一。最典型的是.Net框架下的 ASP.Net Web API。</p>
+<p><strong>MVC</strong>：模型-视图-控制器。一种软件（程序代码组织）架构。将应用的（包括桌面应用和Web应用）设计分层，降低开发过程的耦合性、提高代码重用性，并简化软件开发管理过程。</p>
+<p><strong>WCF</strong>：Windows通讯开发平台。由微软开发的一系列支持数据通信的应用程序框架。它包含了：网络服务的协议、业务服务的协议、数据类型的声明、传输安全性的定义。</p>
+<h2 id="【个人总结】"><a href="#【个人总结】" class="headerlink" title="【个人总结】"></a>【个人总结】</h2><ol>
+<li>SOA和REST都是软件架构设计的思想（注意，是“思想”，抽象的概念，而不是“思路”，），主要目的是解决应用程序之间及应用程序内部的耦合度、可重用性等问题。</li>
+<li>SOAP和WebAPI都是对上述两种架构思想的具体实现。</li>
+<li>SOA、Web API及微服务的区别。微服务是对SOA更进一步的抽象，微服务面向具体的业务场景，每一个服务是可以单独运行的应用，而SOA更偏向于应用内部的服务封装。</li>
+<li>Web Service是系统对外提供接口的一种形式，它借助SOAP、WSDL、UDDI、RPC或消息队列等技术实现对外提供服务。</li>
+<li>不论哪种技术，都是随着软件工程、企业应用的发展及服务器、终端设备的不断升级带来的改变，目标都是基于成本节约、适应（快速）变化的面向未来思想、框架、模式。具体如何使用，还要看需求本身、应用场景及企业（用户）现状。</li>
+</ol>
+<blockquote>
+<p><em>参考资料：</em>  </p>
+<ol>
+<li><em><a target="_blank" rel="noopener" href="http://www.cnblogs.com/markli/p/4460564.html">WCF、WebAPI、WCFREST、WebService之间的区别</a></em>  (英文原文<a target="_blank" rel="noopener" href="https://www.dotnettricks.com/learn/webapi/difference-between-wcf-and-web-api-and-wcf-rest-and-web-service">在这里</a>)</li>
+<li><em><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/37808426">SOA和微服务架构的区别？</a></em></li>
+<li><em><a target="_blank" rel="noopener" href="https://www.ibm.com/developerworks/cn/websphere/library/techarticles/1601_clark-trs/1601_clark.html">微服务、SOA 和 API：是敌是友？</a></em></li>
+<li><em><a target="_blank" rel="noopener" href="http://www.cnblogs.com/guyun/p/4589115.html">Web API 强势入门指南</a></em></li>
+</ol>
+</blockquote>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="tag"># 学习笔记</a>
+              <a href="/tags/%E7%BC%96%E7%A8%8B%E6%8A%80%E6%9C%AF/" rel="tag"># 编程技术</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2020/07/13/tech-coding-2020-07-14-Github-pages-jekyll/" rel="prev" title="使用jekyll搭建Github pages个人博客（含本地调试方法）">
+                  <i class="fa fa-chevron-left"></i> 使用jekyll搭建Github pages个人博客（含本地调试方法）
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2018/07/04/tech-coding-2018-07-05-SOA-SOAP-REST/" rel="next" title="SOA、SOAP、REST">
+                  SOA、SOAP、REST <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+  
+  
+  
+
+
+
+      
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      const commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      
+
+      
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-hand-point-right"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Eric Hu</span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.2.0/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/@next-theme/pjax@0.4.0/pjax.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-next@8.0.0/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-next@8.0.0/source/js/motion.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-next@8.0.0/source/js/schemes/muse.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-next@8.0.0/source/js/next-boot.js"></script>
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '.page-configurations',
+    '.main-inner',
+    '.post-toc-wrap',
+    '.languages',
+    '.pjax'
+  ],
+  analytics: false,
+  cacheBust: false,
+  scrollRestoration: false,
+  scrollTo: !CONFIG.bookmark.enable
+});
+
+document.addEventListener('pjax:success', () => {
+  pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  const hasTOC = document.querySelector('.post-toc');
+  document.querySelector('.sidebar-inner').classList.toggle('sidebar-nav-active', hasTOC);
+  document.querySelector(hasTOC ? '.sidebar-nav-toc' : '.sidebar-nav-overview').click();
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+  
+
+
+
+
+  <script src="//cdn.jsdelivr.net/npm/hexo-theme-next@8.0.0/source/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+<script data-pjax>
+if (document.querySelectorAll('.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8.7.0/dist/mermaid.min.js', () => {
+    mermaid.init({
+      theme    : 'forest',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    }, '.mermaid');
+  }, window.mermaid);
+}
+</script>
+
+
+  
+
+
+
+
+
+
+
+
+    <div class="pjax">
+  
+
+  
+
+    </div>
+</body>
+</html>

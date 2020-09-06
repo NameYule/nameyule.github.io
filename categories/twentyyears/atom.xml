@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://0.0.0.0:4000</id>
+    <title>老于乐 • Posts by &#34;twentyyears&#34; category</title>
+    <link href="https://0.0.0.0:4000" />
+    <updated>2020-08-31T15:03:41.000Z</updated>
+    <category term="项目管理" />
+    <category term="敏捷" />
+    <category term="学习笔记" />
+    <category term="编程技术" />
+    <category term="虚拟机" />
+    <category term="linux" />
+    <category term="conda" />
+    <entry>
+        <id>https://0.0.0.0:4000/2020/08/31/life-twentyyears-graduate/</id>
+        <title>毕业</title>
+        <link rel="alternate" href="https://0.0.0.0:4000/2020/08/31/life-twentyyears-graduate/"/>
+        <content type="html">&lt;h3 id=&#34;没有找到工作&#34;&gt;&lt;a href=&#34;#没有找到工作&#34; class=&#34;headerlink&#34; title=&#34;没有找到工作&#34;&gt;&lt;/a&gt;没有找到工作&lt;/h3&gt;&lt;h3 id=&#34;只身南下&#34;&gt;&lt;a href=&#34;#只身南下&#34; class=&#34;headerlink&#34; title=&#34;只身南下&#34;&gt;&lt;/a&gt;只身南下&lt;/h3&gt;</content>
+        <updated>2020-08-31T15:03:41.000Z</updated>
+    </entry>
+</feed>
