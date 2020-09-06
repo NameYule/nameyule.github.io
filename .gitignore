@@ -6,6 +6,5 @@ node_modules/
 public/
 .deploy/
 .trash
-atom.ejs
 yarn.lock
 package-lock.json
