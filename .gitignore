@@ -6,5 +6,3 @@ node_modules/
 public/
 .deploy/
 .trash
-yarn.lock
-package-lock.json

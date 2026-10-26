@@ -1,0 +1,7 @@
+# 允许全部抓取，并声明 Sitemap 位置。
+# 注意：仓库里原来的 robots.txt 是 "Disallow: /"（屏蔽所有爬虫），
+# 那是测试残留。若原样发布会让整站从搜索引擎消失，故已修正。
+User-agent: *
+Allow: /
+
+Sitemap: https://hyh.im/sitemap.xml

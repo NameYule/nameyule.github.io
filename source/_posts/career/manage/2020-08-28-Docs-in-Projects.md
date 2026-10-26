@@ -1,10 +1,13 @@
 ---
-layout: post
 title: "敏捷就不需要文档？"
 date: 2020-07-14 11:14:00 +0800
 keywords: 项目管理, 敏捷, 文档
 description: 敏捷项目管理需要文档吗？
 tags: [项目管理, 敏捷]
+categories:
+  - career
+  - manage
+permalink: 2020/07/13/career-manage-2020-08-28-Docs-in-Projects/
 ---
 
 敏捷不需要文档？

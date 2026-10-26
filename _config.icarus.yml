@@ -1,0 +1,413 @@
+# Version of the configuration file
+version: 7.0.0
+# Icarus theme variant, can be "default", "cyberpunk" or "m3e" (Material 3 Expressive)
+variant: default
+# Color scheme of the default and m3e variants, can be "light", "dark" or "auto" (light or dark following the setting of the browser or system of each visitor). Can be set per page in the front-matter or in layout configuration files such as _config.post.yml. Ignored by the cyberpunk variant, which is always dark
+appearance: auto
+# Path or URL to the website's logo
+logo: /images/logo.svg
+# Path or URL to the logo shown instead of the logo image when the default or m3e variant looks dark (see appearance), and always by the cyberpunk variant. Without it, the theme's own logo switches to /img/logo-dark.svg and other logos stay the same
+logo_dark: 
+# Page metadata configurations
+head:
+    # URL or path to the website's icon
+    favicon: /images/logo32.png
+    # Web application manifests configuration
+    # https://developer.mozilla.org/en-US/docs/Web/Manifest
+    manifest:
+        # Name of the web application (default to the site title)
+        name: 
+        # The displayed name of the web application
+        # when there is not enough space to display full name
+        short_name: 
+        # The start URL of the web application
+        start_url: 
+        # The default theme color for the application
+        theme_color: 
+        # A placeholder background color for the application page to display
+        # before its stylesheet is loaded
+        background_color: 
+        # The preferred display mode for the website
+        display: standalone
+        # Image files that can serve as application icons for different contexts
+        icons:
+            -
+                # The path to the image file
+                src: ''
+                # A string containing space-separated image dimensions
+                sizes: ''
+                # A hint as to the media type of the image
+                type: 
+    # Open Graph metadata
+    # https://hexo.io/docs/helpers.html#open-graph
+    open_graph:
+        # Page title (og:title) (optional)
+        # You should leave this blank for most of the time
+        title: 
+        # Page type (og:type) (optional)
+        # You should leave this blank for most of the time
+        type: 
+        # Page URL (og:url) (optional)
+        # You should leave this blank for most of the time
+        url: 
+        # Page cover (og:image) (optional)
+        # You should leave this blank for most of the time
+        image: 
+        # Site name (og:site_name) (optional)
+        # You should leave this blank for most of the time
+        site_name: 
+        # Page author (article:author) (optional)
+        # You should leave this blank for most of the time
+        author: 
+        # Page description (og:description) (optional)
+        # You should leave this blank for most of the time
+        description: 
+        # Twitter card type (twitter:card)
+        twitter_card: 
+        # Twitter ID (twitter:creator)
+        twitter_id: 
+        # Twitter Site (twitter:site)
+        twitter_site: 
+        # Google+ profile link (deprecated; ignored)
+        google_plus: 
+        # Facebook admin ID
+        fb_admins: 
+        # Facebook App ID
+        fb_app_id: 
+    # Structured data of the page
+    # https://developers.google.com/search/docs/guides/intro-structured-data
+    structured_data:
+        # Page title (optional)
+        # You should leave this blank for most of the time
+        title: 
+        # Page description (optional)
+        # You should leave this blank for most of the time
+        description: 
+        # Page URL (optional)
+        # You should leave this blank for most of the time
+        url: 
+        # Page author (article:author) (optional)
+        # You should leave this blank for most of the time
+        author: 
+        # Page publisher (optional)
+        # You should leave this blank for most of the time
+        publisher: 
+        # Page publisher logo (optional)
+        # You should leave this blank for most of the time
+        publisher_logo: 
+        # Page images (optional)
+        # You should leave this blank for most of the time
+        image: 
+    # Additional HTML meta tags in an array
+    meta:
+        # Meta tag specified in <attribute>=<value> style
+        # E.g., name=theme-color;content=#123456 => <meta name="theme-color" content="#123456">
+        - ''
+    # URL or path to the website's RSS atom.xml
+    rss: 
+# Page top navigation bar configurations
+navbar:
+    # Whether the navigation bar stays at the top of the window when the page scrolls. true for all screen widths, "mobile" for screens narrower than 769px only, false to scroll it away with the page
+    sticky: false
+    # Navigation menu items
+    menu:
+        首页: /
+        归档: /archives
+        分类: /categories
+        标签: /tags
+        关于: /about
+    # Links to be shown on the right of the navigation bar
+    links:
+        GitHub:
+            icon: fab fa-github
+            url: https://github.com/NameYule/nameyule.github.io
+# Page footer configurations
+footer:
+    # Copyright text
+    copyright: © 2018-2026 老于乐  # 此栏位按 Icarus 约定用于附加声明（如 ICP 备案号）
+    # Links to be shown on the right of the footer section
+    links:
+        RSS:
+            icon: fas fa-rss
+            url: /atom.xml
+        GitHub:
+            icon: fab fa-github
+            url: https://github.com/NameYule/nameyule.github.io
+# Article related configurations
+article:
+    # Code highlight settings
+    highlight:
+        # Code highlight themes
+        # https://github.com/highlightjs/highlight.js/tree/master/src/styles
+        theme: atom-one-light
+        # Code highlight theme used when the default variant looks dark (see appearance)
+        # https://github.com/highlightjs/highlight.js/tree/master/src/styles
+        dark_theme: atom-one-dark
+        # Show copy code button
+        clipboard: true
+        # Default folding status of the code blocks. Can be "", "folded", "unfolded"
+        fold: unfolded
+        # Number of lines that a folded code block still shows, fading out, as a preview that unfolds the block when clicked. 0 hides the code of folded blocks
+        fold_preview: 0
+    # Whether to show estimated article reading time
+    readtime: true
+    # Whether to show updated time. For "auto", shows article update time only when page.updated is set and it is different from page.date
+    update_time: true
+    # Notice shown at the top of posts that were last updated (or, without an update time, posted) a long time ago. Readers' browsers compute the age, so that it stays right on a static site; the notice can be turned off in the front-matter of a post with "outdated_notice: false"
+    outdated_notice:
+        # Whether to show the notice
+        enable: false
+        # Number of days after the last update from which the post is considered outdated
+        days: 365
+    # Article licensing block
+    licenses: {}  # 未声明授权协议，不展示 CC 块
+# Search plugin configurations
+# https://ppoffice.github.io/hexo-theme-icarus/categories/Plugins/Search/
+search:
+    type: insight
+    # Whether to include pages in the search results
+    index_pages: true
+# Comment plugin configurations
+# https://ppoffice.github.io/hexo-theme-icarus/categories/Plugins/Comment/
+# Donate plugin configurations
+# https://ppoffice.github.io/hexo-theme-icarus/categories/Plugins/Donation/
+donates: []  # 未开启打赏
+
+# Share plugin configurations
+# https://ppoffice.github.io/hexo-theme-icarus/categories/Plugins/Share/
+# 未接入分享插件；要开就配置 share: {type: addtoany, ...} 之类
+
+# Sidebar configurations.
+# Please be noted that a sidebar is only visible when it has at least one widget
+sidebar:
+    # Left sidebar configurations
+    left:
+        # Whether the sidebar sticks to the top when page scrolls
+        sticky: false
+    # Right sidebar configurations
+    right:
+        # Whether the sidebar sticks to the top when page scrolls
+        sticky: false
+# Sidebar widget configurations. Set to null to disable all widgets
+# http://ppoffice.github.io/hexo-theme-icarus/categories/Widgets/
+widgets:
+    # Profile widget configurations
+    -
+        # Where should the widget be placed, left sidebar or right sidebar
+        position: left
+        type: profile
+        # Author name
+        author: Eric Hu
+        # Author title
+        author_title: 一切过往，皆为序章
+        # Author's current location
+        location:
+        # URL or path to the avatar image
+        avatar: /images/avatar.png
+        # Whether show the rounded avatar image
+        avatar_rounded: true
+        # Email address for the Gravatar
+        gravatar: 
+        # URL or path for the follow button
+        follow_link: https://github.com/NameYule
+        # Links to be shown on the bottom of the profile widget
+        social_links:
+            GitHub:
+                icon: fab fa-github
+                url: https://github.com/NameYule
+            RSS:
+                icon: fas fa-rss
+                url: /atom.xml
+    # Table of contents widget configurations
+    -
+        # Where should the widget be placed, left sidebar or right sidebar
+        position: left
+        type: toc
+        # Whether to show the index of each heading
+        index: true
+        # Whether to collapse sub-headings when they are out-of-view
+        collapsed: true
+        # Maximum level of headings to show (1-6)
+        depth: 3
+    # Recommendation links widget configurations
+    -
+        # Where should the widget be placed, left sidebar or right sidebar
+        position: left
+        type: links
+        # Names and URLs of the sites
+        links: {}
+    # Categories widget configurations
+    -
+        # Where should the widget be placed, left sidebar or right sidebar
+        position: left
+        type: categories
+        # Amount of top-level categories to show, with a link to the category page for the rest. Will show all if not set
+        amount: 
+        # How to order the categories. For example 'name' to order by name, and 'length' to order by number of posts. Orders by name if not set
+        order_by: 
+        # 1 for ascending order, or -1 for descending order. Ascending if not set
+        order: 
+        # Levels of categories to show, for example 1 for the top-level categories only. Shows all levels if not set or 0
+        depth: 
+        # Whether to highlight the categories of the current post
+        show_current: 
+        # Whether to show the number of posts of each category
+        show_count: true
+    # Recent posts widget configurations
+    -
+        # Where should the widget be placed, left sidebar or right sidebar
+        position: left
+        type: recent_posts
+        # Number of recent posts to show. Shows 5 if not set
+        limit: 
+    # Archives widget configurations
+    -
+        # Where should the widget be placed, left sidebar or right sidebar
+        position: left
+        type: archives
+        # Amount of archives to show, with a link to the archive page for the rest. Will show all if not set
+        amount: 
+        # Whether to group the archives by month or by year. Groups by month if not set
+        group_by: 
+        # 1 to show the oldest archives first, or -1 to show the newest first. Shows the newest first if not set
+        order: 
+        # Moment.js format of the archive names, such as 'MMMM YYYY' (by month) or 'YYYY' (by year), which are used if not set
+        format: 
+        # Whether to show the number of posts of each archive
+        show_count: true
+    # Tags widget configurations
+    -
+        # Where should the widget be placed, left sidebar or right sidebar
+        position: left
+        type: tags
+        # How to order tags. For example 'name' to order by name in ascending order, and '-length' to order by number of posts in each tags in descending order
+        order_by: name
+        # Amount of tags to show, with a link to the tag page for the rest. Will show all if not set.
+        amount: 
+        # Whether to show tags count, i.e. number of posts in the tag.
+        show_count: true
+    # Responsive GitHub contribution calendar. Data is loaded from the third-party github-contributions-api.jogruber.de service; no GitHub token is needed
+    -
+        # Where should the widget be placed, left sidebar or right sidebar
+        position: left
+        type: github_calendar
+        # GitHub username. Leave empty to hide this widget
+        username: 
+        # Widget title. Leave empty to use the translated default
+        title: 
+        # Optional six-digit hex color, for example '#40c463'. Leave empty to use the theme's calendar palette
+        color: 
+# Plugin configurations
+# https://ppoffice.github.io/hexo-theme-icarus/categories/Plugins/
+plugins:
+    # Enable page startup animations
+    animejs: true
+    # Show the "back to top" button
+    back_to_top: true
+    # Baidu Analytics plugin settings
+    # https://tongji.baidu.com
+    baidu_analytics:
+        # Baidu Analytics tracking ID
+        tracking_id: 
+    # Bing Webmaster Tools plugin settings
+    # https://www.bing.com/toolbox/webmaster/
+    bing_webmaster:
+        # Bing Webmaster Tools tracking ID in the <meta> tag
+        tracking_id: 
+    # BuSuanZi site/page view counter
+    # https://busuanzi.ibruce.info
+    busuanzi: false
+    # CNZZ statistics
+    # https://www.umeng.com/web
+    cnzz:
+        # CNZZ tracker id
+        id: 
+        # CNZZ website id
+        web_id: 
+    # Cookie notice and tracking consent
+    # https://www.osano.com/cookieconsent/
+    cookie_consent:
+        # info: notice only; opt-in: load after consent; opt-out: load until denied
+        type: info
+        # Theme of the popup. Can be "block", "edgeless", or "classic"
+        theme: edgeless
+        # Whether the popup should stay static regardless of the page scrolls
+        static: false
+        # Where on the screen the consent popup should display
+        position: bottom-left
+        # URL to your site's cookie policy
+        policyLink: https://www.cookiesandyou.com/
+    # Enable the lightGallery and Justified Gallery plugins
+    gallery: true
+    # Google Analytics plugin settings
+    # https://analytics.google.com
+    google_analytics:
+        # Google Analytics tracking ID
+        tracking_id: 
+    # Hotjar user feedback plugin
+    # https://www.hotjar.com/
+    hotjar:
+        # Hotjar site id
+        site_id: 
+    # Enable the KaTeX math typesetting support
+    # https://katex.org/
+    katex: false
+    # Enable MathJax math typesetting
+    # https://www.mathjax.org/
+    mathjax: false
+    # Matomo analytics plugin settings
+    # https://matomo.org
+    matomo:
+        # URL of your Matomo server, e.g., https://matomo.example.com/ or https://example.matomo.cloud/
+        url: 
+        # Matomo site ID
+        site_id: 
+        # Track visitors without setting cookies
+        disable_cookies: false
+    # Warn when required CSS features are unsupported
+    outdated_browser: false
+    # Enable PJAX
+    pjax: true
+    # Prefetch the pages of the site that the visitor hovers over or touches the links to, so that they open faster. Not when the visitor has asked to save data
+    prefetch: false
+    # Show a progress bar at top of the page on page loading
+    progressbar: true
+    # Statcounter statistics
+    # https://statcounter.com/
+    statcounter:
+        # Statcounter project id
+        project: 
+        # Statcounter project security code
+        security: 
+    # Twitter conversion tracking plugin settings
+    # https://business.twitter.com/en/help/campaign-measurement-and-analytics/conversion-tracking-for-websites.html
+    twitter_conversion_tracking:
+        # Twitter Pixel ID
+        pixel_id: 
+    # Umami analytics plugin settings
+    # https://umami.is/docs/tracker-configuration
+    umami:
+        # Umami website ID
+        website_id: 
+        # URL of the Umami tracker script. Change it to the one on your server if you host Umami yourself
+        script_url: https://cloud.umami.is/script.js
+        # Only track the visits on these comma-separated domains
+        domains: 
+    # Waline page view counter, true to use the server of the Waline comments. Do not also enable the pageview option of the Waline comments, which would count the views twice
+    # https://waline.js.org/en/guide/features/pageview.html
+    waline_pageview: false
+# CDN provider settings
+# https://ppoffice.github.io/hexo-theme-icarus/Configuration/icarus-user-guide-cdn-providers/
+providers:
+    # Name or URL template of the JavaScript and/or stylesheet CDN provider
+    cdn: jsdelivr
+    # CDN providers (same names as cdn) or URL templates of the packages that do not use the cdn provider above, by package name, e.g.
+    #     jquery: unpkg
+    #     highlight.js: https://cdn.example.com/${package}@${version}/${filename}
+    # A URL without ${package}, ${version} or ${filename} is used as is for every file of the package, so only use it for packages that load a single file, e.g.
+    #     clipboard: https://example.com/js/clipboard.min.js
+    cdn_overrides: {}
+    # Name or URL template of the webfont CDN provider
+    fontcdn: google
+    # Name or URL of the fontawesome icon font CDN provider
+    iconcdn: fontawesome

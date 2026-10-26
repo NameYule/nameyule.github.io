@@ -1,10 +1,7 @@
 ---
-title: "我是于乐..."
+title: 我是于乐...
 date: 2018-06-21 23:13:00  +0800
-category: 折腾
 keywords: 老于乐, 博客, 独立博客
-tags:
- - 生活, 职场, 博客 
 description: 一个老人家的自述。
 ---
 
