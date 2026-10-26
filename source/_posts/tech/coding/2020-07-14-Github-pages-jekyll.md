@@ -1,10 +1,13 @@
 ---
-layout: post
 title: "使用jekyll搭建Github pages个人博客（含本地调试方法）"
 date: 2020-07-14 11:14:00 +0800
 keywords: jekyll, github, github pages
 description: jekyll, github, github pages
 tags: [学习笔记]
+categories:
+  - tech
+  - coding
+permalink: 2020/07/13/tech-coding-2020-07-14-Github-pages-jekyll/
 ---
 
 

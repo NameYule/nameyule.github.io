@@ -1,10 +1,13 @@
 ---
-layout: post
 title: "使用Vscode Remote SSH连接Linux开发环境"
 date: 2020-07-14 11:14:00  +0800
 keywords: Vscode, linux, RemoteSSH
 description: Vscode, linux, RemoteSSH
 tags: [学习笔记, linux]
+categories:
+  - tech
+  - os
+permalink: 2020/07/13/tech-os-2020-07-14-Vscode-ssh-linux/
 ---
 
 ### 安装Vscode

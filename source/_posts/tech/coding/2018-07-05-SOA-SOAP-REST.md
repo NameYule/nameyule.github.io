@@ -4,6 +4,10 @@ date: 2018-07-05 13:42:00  +0800
 keywords: SOA, SOAP, REST
 tags: [学习笔记, 编程技术]
 description: SOA, SOAP, REST
+categories:
+  - tech
+  - coding
+permalink: 2018/07/04/tech-coding-2018-07-05-SOA-SOAP-REST/
 ---
 
 
