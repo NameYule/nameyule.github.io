@@ -7,7 +7,6 @@ tags: [项目管理, 敏捷]
 categories:
   - career
   - manage
-permalink: 2020/07/13/career-manage-2020-08-28-Docs-in-Projects/
 ---
 
 敏捷不需要文档？

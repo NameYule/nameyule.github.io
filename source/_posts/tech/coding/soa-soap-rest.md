@@ -7,7 +7,6 @@ description: SOA, SOAP, REST
 categories:
   - tech
   - coding
-permalink: 2018/07/04/tech-coding-2018-07-05-SOA-SOAP-REST/
 ---
 
 

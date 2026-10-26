@@ -7,7 +7,6 @@ tags: [学习笔记, linux]
 categories:
   - tech
   - os
-permalink: 2020/07/13/tech-os-2020-07-14-Vscode-ssh-linux/
 ---
 
 ### 安装Vscode

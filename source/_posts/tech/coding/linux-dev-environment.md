@@ -7,7 +7,6 @@ tags: [学习笔记, 编程技术, 虚拟机, linux, conda]
 categories:
   - tech
   - coding
-permalink: 2020/07/13/tech-coding-2020-07-14-Develop-with-Linux/
 ---
 
 ### 安装Linux

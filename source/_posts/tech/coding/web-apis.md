@@ -7,7 +7,6 @@ tags: [学习笔记, 编程技术]
 categories:
   - tech
   - coding
-permalink: 2018/07/04/tech-coding-2018-07-07-Web-APIs/
 ---
 
 **SOA**：面向服务的架构。一种架构思想，核心是低耦合、标准服务接口、屏蔽底层接口、通讯的实现等。  

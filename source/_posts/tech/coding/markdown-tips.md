@@ -7,7 +7,6 @@ tags: [学习笔记]
 categories:
   - tech
   - coding
-permalink: 2020/07/13/tech-coding-2020-08-27-markdown/
 ---
 
 The New title[^1]
