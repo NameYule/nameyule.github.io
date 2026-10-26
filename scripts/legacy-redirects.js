@@ -17,17 +17,14 @@
 
 const SITE_URL = 'https://hyh.im';
 
-// old path (no leading slash, trailing slash) -> new path
+// old path (no leading slash, trailing slash) -> new path.
+//
+// Only posts that still exist are listed. Nine legacy URLs pointed at
+// content that was deliberately deleted (empty stubs, copied reference
+// material, obsolete Jekyll notes); those now 404, which is the honest
+// signal for removed content. Point them at /archives/ instead if you
+// would rather give old bookmarks a soft landing.
 const REDIRECTS = {
-  '2018/07/04/tech-coding-2018-07-05-SOA-SOAP-REST/': '/posts/soa-soap-rest/',
-  '2018/07/04/tech-coding-2018-07-07-Web-APIs/': '/posts/web-apis/',
-  '2020/07/13/career-manage-2020-08-28-Docs-in-Projects/': '/posts/agile-docs/',
-  '2020/07/13/tech-coding-2020-07-14-Develop-with-Linux/': '/posts/linux-dev-environment/',
-  '2020/07/13/tech-coding-2020-07-14-Github-pages-jekyll/': '/posts/github-pages-jekyll/',
-  '2020/07/13/tech-coding-2020-08-27-markdown/': '/posts/markdown-tips/',
-  '2020/07/13/tech-os-2020-07-14-Vscode-ssh-linux/': '/posts/vscode-remote-ssh/',
-  '2020/08/31/life-twentyyears-graduate/': '/posts/graduate/',
-  '2020/09/06/career-new/': '/posts/career-new/',
   '2020/09/06/career-when-you-should-change-your-job/': '/posts/when-to-change-job/',
   '2020/09/06/read-the-four-steps-to-the-epiphany/': '/posts/four-steps-to-the-epiphany/'
 };

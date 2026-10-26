@@ -2,7 +2,7 @@
 title: 换工作的理由
 date: 2020-09-06 12:00:00 +0800
 categories:
-  - career
+  - work
 ---
 
 年轻人总是容易冲动。
