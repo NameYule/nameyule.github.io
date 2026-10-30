@@ -35,6 +35,7 @@ from __future__ import annotations
 import argparse
 import datetime as dt
 import re
+import shutil
 import sys
 from pathlib import Path
 
@@ -181,6 +182,10 @@ BODY_OPT_OUT_RE = re.compile(r"^>\s*publish_web\s*:\s*false\s*$", re.I | re.M)
 
 # [文字](路径.md)，但不吃图片 ![文字](路径) —— 那是另一种东西
 MD_LINK_RE = re.compile(r"(?<!!)\[([^\]]+)\]\(([^)\s]+\.md)(?:#[^)]*)?\)")
+IMAGE_RE = re.compile(r"!\[([^\]]*)\]\(([^)\s]+)\)")
+
+# 生成的图片统一放 source/images/blog/<分类>/<成稿名>/，和手管的 avatar/logo 分开
+IMG_ROOT = SITE_ROOT / "source" / "images" / "blog"
 
 
 def publication_blocker(meta: dict, body: str) -> str | None:
@@ -206,6 +211,58 @@ def publication_blocker(meta: dict, body: str) -> str | None:
 
 
 # ---------------------------------------------------------------- 生成
+
+def asset_urls(src: Path, domain: str) -> dict[str, str]:
+    """本地附件 -> 站点 URL。
+
+    库的约定是「文档的本地附件放在同级 assets/<md文件名去掉扩展名>/<附件名>」，
+    正文里按相对路径引。搬到站点后地址变了，得跟着改写，否则图就是个裂开的框。
+    """
+    root = src.parent / "assets" / src.stem
+    out: dict[str, str] = {}
+    if not root.is_dir():
+        return out
+    for f in sorted(root.rglob("*")):
+        if f.is_file():
+            rel = f.relative_to(src.parent).as_posix()          # assets/<stem>/<名>
+            sub = f.relative_to(root).as_posix()                # <名>（可带子目录）
+            out[rel] = f"/images/blog/{domain}/{src.stem}/{sub}"
+    return out
+
+
+def rewrite_images(body: str, src: Path, domain: str) -> str:
+    """把指向本地附件的图片改成站点地址；远程图和 data: 原样不动。
+
+    引了但文件不在本地的，保持原样并由调用方警告——总比悄悄删掉图强。
+    """
+    mapping = asset_urls(src, domain)
+
+    def repl(m: re.Match) -> str:
+        alt, target = m.group(1), m.group(2)
+        if target.startswith(("http://", "https://", "data:")):
+            return m.group(0)
+        key = re.sub(r"^(\./)+", "", target)
+        return f"![{alt}]({mapping[key]})" if key in mapping else m.group(0)
+
+    return IMAGE_RE.sub(repl, body)
+
+
+def copy_assets(src: Path, domain: str) -> int:
+    """把成稿的本地附件复制到站点，返回复制的文件数。"""
+    root = src.parent / "assets" / src.stem
+    if not root.is_dir():
+        return 0
+    dest_root = IMG_ROOT / domain / src.stem
+    n = 0
+    for f in sorted(root.rglob("*")):
+        if not f.is_file():
+            continue
+        dest = dest_root / f.relative_to(root)
+        dest.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(f, dest)
+        n += 1
+    return n
+
 
 def rewrite_links(body: str, src: Path, slug_map: dict[Path, str]) -> str:
     """把 vault 内部链接改写成站点能用的东西。
@@ -240,6 +297,7 @@ def render_post(src: Path, domain: str, slug_map: dict[Path, str] | None = None)
     tags = pick_tags(meta)
     if slug_map:
         body = rewrite_links(body, src, slug_map)
+    body = rewrite_images(body, src, domain)
 
     out_meta: dict = {
         "title": title,
@@ -300,6 +358,20 @@ def prune(dry_run: bool) -> int:
         if not dry_run:
             out.unlink()
         removed += 1
+
+    # 成稿没了，它的图片目录也该跟着走。手管的 avatar/logo 在 source/images/ 下，
+    # 不在 images/blog/ 里，永远不会被扫到。
+    if IMG_ROOT.is_dir():
+        for imgdir in sorted(IMG_ROOT.glob("*/*")):
+            if not imgdir.is_dir():
+                continue
+            domain, stem = imgdir.parent.name, imgdir.name
+            if (BLOG_DIR / domain / f"{stem}.md").exists():
+                continue
+            print(f"  - 删除 {imgdir.relative_to(SITE_ROOT)}/（成稿已不在 vault）")
+            if not dry_run:
+                shutil.rmtree(imgdir)
+            removed += 1
     return removed
 
 
@@ -332,11 +404,6 @@ def main() -> int:
     for domain, src in entries:
         rel = src.relative_to(VAULT_ROOT)
 
-        # 本地附件还没做同步，先点出来，别让图悄悄丢
-        assets = src.parent / "assets" / src.stem
-        if assets.is_dir() and any(assets.iterdir()):
-            print(f"  ! {rel} 带本地附件 {assets.relative_to(VAULT_ROOT)}/，目前不会同步到站点", file=sys.stderr)
-
         try:
             slug, text = render_post(src, domain, slug_map)
         except SkipPost as exc:
@@ -362,12 +429,28 @@ def main() -> int:
             skipped += 1
             continue
 
+        # 引用了本地图片但文件不在 assets/<成稿名>/ 里的，点出来——图会显示成裂框。
+        # 必须拿**改写前**的正文查：text 已经是站点地址了，拿它查键查不中。
+        known = set(asset_urls(src, domain))
+        raw_body = split_frontmatter(src.read_text(encoding="utf-8"))[1]
+        for m in IMAGE_RE.finditer(raw_body):
+            target = re.sub(r"^(\./)+", "", m.group(2))
+            if target.startswith(("http://", "https://", "data:")):
+                continue
+            if target not in known:
+                print(f"  ! {rel} 引用了本地图片 {target}，但在 assets/{src.stem}/ 里找不到", file=sys.stderr)
+
         action = "新增" if current is None else "更新"
         print(f"  ~ {rel} -> source/_posts/{domain}/{slug}.md（{action}）")
         if not dry_run:
             dest.write_text(text, encoding="utf-8")
+            n_img = copy_assets(src, domain)
+        else:
+            n_img = len(known)
         changed += 1
         written += 1
+        if n_img:
+            print(f"      + {n_img} 个附件 -> source/images/blog/{domain}/{src.stem}/")
 
     if args.prune:
         print("\n清理：")
