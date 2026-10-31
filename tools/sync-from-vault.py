@@ -34,6 +34,7 @@ from __future__ import annotations
 
 import argparse
 import datetime as dt
+import os
 import re
 import shutil
 import sys
@@ -45,7 +46,8 @@ except ImportError:  # pragma: no cover
     sys.exit("需要 PyYAML：pip3 install pyyaml")
 
 SITE_ROOT = Path(__file__).resolve().parent.parent  # tools/ 的上一级 = 仓库根
-VAULT_ROOT = Path("/Users/huyuhui/notes")
+# vault 路径可由发布链路经环境变量传入（publish-blog-post 的 .env 配置），默认保持原路径
+VAULT_ROOT = Path(os.environ.get("NOTES_VAULT_DIR", "/Users/huyuhui/notes"))
 POSTS_DIR = SITE_ROOT / "source" / "_posts"
 BLOG_DIR = VAULT_ROOT / "blog"
 
